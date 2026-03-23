@@ -1,0 +1,43 @@
+package step2;
+
+import java.util.ArrayList;
+import java.util.List;
+
+public class Calculator {
+
+    // 컬렉션 상자
+    List<Integer> results = new ArrayList<>();
+
+    //메서드
+    public int calculate(int num1, int num2, char operator) {
+        int result = 0;
+
+        switch (operator) {
+            case '+':
+                result = num1 + num2;
+                break;
+            case '-':
+                result = num1 - num2;
+                break;
+            case '*':
+                result = num1 * num2;
+                break;
+            case '/':
+                if (num2 == 0) {
+                    System.out.println("나눗셈 연산에서 분모가 0이 될수 없습니다.");
+
+
+                } else {
+                    result = num1 / num2;
+                }
+                break;
+
+
+
+        }
+        //  계산된 결과값을 상자에 추가
+        results.add(result);
+
+        return result;
+    }
+}
