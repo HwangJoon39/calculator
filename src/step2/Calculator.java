@@ -6,7 +6,16 @@ import java.util.List;
 public class Calculator {
 
     // 컬렉션 상자
-    List<Integer> results = new ArrayList<>();
+    private List<Integer> results = new ArrayList<>();
+
+    //Getter 메서드
+    public List<Integer> getResults() {
+        return results;
+    }
+    //Setter 메서드
+    public void setResults(List<Integer> results) {
+        this.results = results;
+    }
 
     //메서드
     public int calculate(int num1, int num2, char operator) {
