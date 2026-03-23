@@ -22,7 +22,10 @@ public class app {
 
             //result 변수에 저장
             int result = cal.calculate(num1, num2, operator);
-
+            //Getter 열어준걸 가져올수있게
+            System.out.println("현재까지의 계산 기록: " + cal.getResults());
+            //만약 Setter 열어준걸 사용할때
+            //cal.setResults(new ArrayList<>());
             System.out.println("결과는 " + result + " 입니다.");
 
             System.out.println("계산기를 종료하시겠습니까? (exit 입력 시 종료)");
