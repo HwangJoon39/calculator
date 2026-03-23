@@ -27,6 +27,15 @@ public class app {
             //만약 Setter 열어준걸 사용할때
             //cal.setResults(new ArrayList<>());
             System.out.println("결과는 " + result + " 입니다.");
+            // 삭제 메서드
+            System.out.println("가장 먼저 저장된 데이터를 삭제하시겠습니까? (remove 입력 시 삭제, 아니면 아무 키나 입력)");
+            String removeAnswer = sc.next();
+
+            if (removeAnswer.equals("remove")) {
+                cal.removeResult();
+                System.out.println("삭제 후 연산 기록: " + cal.getResults());
+            }
+
 
             System.out.println("계산기를 종료하시겠습니까? (exit 입력 시 종료)");
             String exit = sc.next();
