@@ -8,21 +8,20 @@ public class app {
         Scanner sc = new Scanner(System.in);
 
         // Calculator 대신 ArithmeticCalculator를 가져온다
-        ArithmeticCalculator cal = new ArithmeticCalculator();
+        ArithmeticCalculator<Double> cal = new ArithmeticCalculator<>();
 
         while (true) {
             System.out.print("첫 번째 숫자를 입력해주세요: ");
-            int num1 = sc.nextInt();
-
+            Double num1 = sc.nextDouble();
             System.out.print("두 번째 숫자를 입력해주세요: ");
-            int num2 = sc.nextInt();
+            Double num2 = sc.nextDouble();
 
             System.out.print("사칙연산 기호를 입력해주세요: ");
             //문자로 기호 받기
             char operatorChar = sc.next().charAt(0);
 
             //기호를 문자로 바꿔주기
-            OperatorType operator = null;
+            OperatorType operator;
 
             switch (operatorChar) {
                 case '+':
@@ -44,7 +43,7 @@ public class app {
             }
 
             //  다시 원래 calculator에 넘겨줌
-            int result = cal.calculate(num1, num2, operator);
+            Double result = cal.calculate(num1, num2, operator);
 
 
             System.out.println("현재까지의 계산 기록: " + cal.getResults());
@@ -58,6 +57,13 @@ public class app {
                 cal.removeResult();
                 System.out.println("삭제 후 연산 기록: " + cal.getResults());
             }
+
+            System.out.print("특정 숫자보다 큰 결과값들을 조회하시겠습니까? (기준 숫자를 입력하세요, 0 입력 시 전체결과와 동일): ");
+            double searchNum = sc.nextDouble(); // 기준 숫자 입력받기
+
+            // 람다 & 스트림 조회 메서드 실행
+            cal.printResultsGreaterThan(searchNum);
+
 
             System.out.println("계산기를 종료하시겠습니까? (exit 입력 시 종료)");
             String exit = sc.next();
