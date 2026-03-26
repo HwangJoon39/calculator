@@ -41,4 +41,12 @@ public class ArithmeticCalculator<T extends Number> {
         results.add(result);
         return result;
     }
+    // 저장된 연산 결과들 중 Scanner로 입력받은 값보다 큰 결과값들을 출력하는 메서드 (람다 & 스트림 활용)
+    public void printResultsGreaterThan(double standardNum) {
+        System.out.println("--- " + standardNum + " 보다 큰 결과 목록 ---");
+
+        results.stream()
+                .filter(result -> result > standardNum) // 입력받은 값보다 큰 것만 필터링
+                .forEach(result -> System.out.println(result)); // 필터링된 결과들을 출력
+    }
 }

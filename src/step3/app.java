@@ -58,6 +58,13 @@ public class app {
                 System.out.println("삭제 후 연산 기록: " + cal.getResults());
             }
 
+            System.out.print("특정 숫자보다 큰 결과값들을 조회하시겠습니까? (기준 숫자를 입력하세요, 0 입력 시 전체결과와 동일): ");
+            double searchNum = sc.nextDouble(); // 기준 숫자 입력받기
+
+            // 람다 & 스트림 조회 메서드 실행
+            cal.printResultsGreaterThan(searchNum);
+
+
             System.out.println("계산기를 종료하시겠습니까? (exit 입력 시 종료)");
             String exit = sc.next();
             if (exit.equals("exit")) {
